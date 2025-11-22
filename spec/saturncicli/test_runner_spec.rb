@@ -1,5 +1,5 @@
-require "rails_helper"
-require Rails.root.join("lib/saturncicli/test_runner")
+require "spec_helper"
+require_relative "../../lib/saturncicli/test_runner"
 
 describe SaturnCICLI::TestRunner do
   describe "#rsa_key_path" do
@@ -19,7 +19,7 @@ describe SaturnCICLI::TestRunner do
 
     it "returns a path" do
       test_runner.refresh
-      expect(test_runner.rsa_key_path).to be_present
+      expect(test_runner.rsa_key_path).not_to be_nil
     end
 
     it "puts the key in a file" do
